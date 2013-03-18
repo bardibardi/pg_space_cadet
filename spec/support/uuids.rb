@@ -1,14 +1,10 @@
-require_relative '../lib/bardibardi_postgresql_uuid'
+require_relative '../../lib/bardibardi_postgresql_uuid'
 
 POSTGRESQL_URL ||= "postgres://postgres:postgres@localhost/postgres"
 
 CONNECTION_POOL ||= ActiveRecord::Base.establish_connection POSTGRESQL_URL
 
 END { CONNECTION_POOL.disconnect! }
-
-def l
-  load 'lib/uuids.rb'
-end
 
 class ChessGameCore < ActiveRecord::Migration
 
