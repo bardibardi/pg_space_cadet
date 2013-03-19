@@ -41,13 +41,16 @@ START_POSITION ||=
   "a1wrb1wnc1wbd1wqe1wkf1wbg1wnh1wr"
 
 def add_chess_game moves, ambiguities
+  record = nil
   ChessGame.create! do |g|
     g.moves = moves
     g.ambiguities = ambiguities
     g.move_number = 1
     g.is_whites_move = 1
     g.position = START_POSITION
+    record = g
   end
+  [record.id, record]
 end
 
 def up
