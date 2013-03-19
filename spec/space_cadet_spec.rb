@@ -1,5 +1,5 @@
 require_relative 'support/ar_rspec'
-require_relative 'support/uuids'
+require_relative 'support/space_cadet'
 
 describe SpaceCadet::Uuid do
   it "should be created" do
