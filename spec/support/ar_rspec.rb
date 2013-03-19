@@ -1,5 +1,6 @@
 # NB: http://iain.nl/testing-activerecord-in-isolation
 # NB: require 'support/ar_rspec'
+require_relative 'no_should_rspec'
 require 'active_record'
 
 module ActiveModel::Validations
@@ -23,11 +24,6 @@ module ActiveModel::Validations
 end
 
 RSpec.configure do |config|
-
-  # rspec 2.11 turn off should monkey patching
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
 
   config.around do |example|
     ActiveRecord::Base.transaction do

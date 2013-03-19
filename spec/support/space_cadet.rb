@@ -1,3 +1,9 @@
+def l
+  me = File.expand_path File.basename(__FILE__), File.dirname(__FILE__)
+  result = load me
+  [result, me]
+end
+
 require_relative '../../lib/space_cadet_postgresql_uuid'
 
 POSTGRESQL_URL ||= "postgres://postgres:postgres@localhost/postgres"
