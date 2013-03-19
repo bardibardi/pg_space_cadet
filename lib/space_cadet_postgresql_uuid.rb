@@ -1,13 +1,13 @@
-require_relative 'bardibardi_uuid'
-require_relative 'bardibardi_uuid_id'
-require_relative 'bardibardi_postgresql_hack'
-require_relative 'bardibardi_active_record_uuid'
+require_relative 'space_cadet_uuid'
+require_relative 'space_cadet_uuid_id'
+require_relative 'space_cadet_postgresql_hack'
+require_relative 'space_cadet_active_record_uuid'
 
-module BardiBardiUuid
+module SpaceCadetUuid
 
-  include BardiBardiUuidId
-  include BardiBardiPostgresqlHack
-  include BardiBardiActiveRecordUuid
+  include SpaceCadetUuidId
+  include SpaceCadetPostgresqlHack
+  include SpaceCadetActiveRecordUuid
 
 end
 

@@ -5,7 +5,7 @@
 
 require 'active_record'
 
-module BardiBardiActiveRecordUuid
+module SpaceCadetActiveRecordUuid
 
   def id_add_uuid uuid_class, source_name, id, uuid
     conn = uuid_class.connection
@@ -26,5 +26,5 @@ module BardiBardiActiveRecordUuid
     set_auto_increment conn, source_name, id
   end
 
-end # BardiBardiActiveRecordUuid
+end # SpaceCadetActiveRecordUuid
 

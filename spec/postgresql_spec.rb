@@ -1,10 +1,10 @@
 require_relative 'support/ar_rspec'
 require_relative 'support/uuids'
 
-describe BardiBardi::Uuid do
-  it "should be constructed" do
+describe SpaceCadet::Uuid do
+  it "should be created" do
     id, record = add_chess_game 'e2e4', ''
-    u = BardiBardi::Uuid.find(id)
+    u = SpaceCadet::Uuid.find(id)
     expect(id).to eq(u.id)
   end
 end

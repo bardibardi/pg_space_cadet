@@ -1,4 +1,4 @@
-module BardiBardiUuid
-  VERSION = "0.5.0"
+module SpaceCadetUuid
+  VERSION = "0.6.0"
 end
 

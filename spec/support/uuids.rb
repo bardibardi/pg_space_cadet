@@ -1,4 +1,4 @@
-require_relative '../../lib/bardibardi_postgresql_uuid'
+require_relative '../../lib/space_cadet_postgresql_uuid'
 
 POSTGRESQL_URL ||= "postgres://postgres:postgres@localhost/postgres"
 
@@ -26,10 +26,10 @@ end # ChessGameCore
 
 class ChessGame < ActiveRecord::Base
 
-  include BardiBardiUuid
+  include SpaceCadetUuid
 
   before_create do |record|
-    record.prepare_create BardiBardi::Uuid, record, 31
+    record.prepare_create SpaceCadet::Uuid, record, 31
   end
 
 end # ChessGame
@@ -54,12 +54,12 @@ def add_chess_game moves, ambiguities
 end
 
 def up
-  BardiBardi::UuidCore.up
+  SpaceCadet::UuidCore.up
   ChessGameCore.up
 end
 
 def down
   ChessGameCore.down
-  BardiBardi::UuidCore.down
+  SpaceCadet::UuidCore.down
 end
 

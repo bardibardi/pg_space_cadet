@@ -1,4 +1,4 @@
-module BardiBardiUuidId
+module SpaceCadetUuidId
 
   HEX_DIGIT ||= Hash[
     '0', 0, '1', 1, '2', 2, '3', 3,
@@ -26,5 +26,5 @@ module BardiBardiUuidId
     low_order_bits_from_hex_string hex_string, id_bit_count
   end
 
-end # BardiBardiUuidId
+end # SpaceCadetUuidId
 

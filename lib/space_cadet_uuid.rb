@@ -1,6 +1,6 @@
 require 'active_record'
 
-module BardiBardi
+module SpaceCadet
 
   class UuidCore < ActiveRecord::Migration
 
@@ -22,5 +22,5 @@ module BardiBardi
   class Uuid < ActiveRecord::Base
   end # Uuid
 
-end # BardiBardi
+end # SpaceCadet
 
