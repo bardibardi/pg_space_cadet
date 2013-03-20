@@ -30,16 +30,33 @@ class ChessGameCore < ActiveRecord::Migration
 
 end # ChessGameCore
 
+# class ChessGame < ActiveRecord::Base
+# 
+#   include SpaceCadetUuid
+# 
+#   before_create do |record|
+#     record.prepare_create SpaceCadet::Uuid, record, 31
+#   end
+# 
+#   before_destroy do |record|
+#     SpaceCadet::Uuid.delete(record.id)
+#   end
+# 
+# end # ChessGame
+
 class ChessGame < ActiveRecord::Base
 
   include SpaceCadetUuid
 
-  before_create do |record|
-    record.prepare_create SpaceCadet::Uuid, record, 31
+  before_create :prepare_uuid
+  before_destroy :uuid_clean
+
+  def prepare_uuid
+    prepare_create SpaceCadet::Uuid, self, 31
   end
 
-  before_destroy do |record|
-    SpaceCadet::Uuid.delete(record.id)
+  def uuid_clean
+    SpaceCadet::Uuid.delete id
   end
 
 end # ChessGame
