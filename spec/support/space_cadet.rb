@@ -4,7 +4,7 @@ def l
   [result, me]
 end
 
-require_relative '../../lib/space_cadet_postgresql_uuid'
+require_relative '../../lib/space_cadet_wrapper'
 
 POSTGRESQL_URL ||= "postgres://postgres:postgres@localhost/postgres"
 
@@ -29,34 +29,6 @@ class ChessGameCore < ActiveRecord::Migration
   end
 
 end # ChessGameCore
-
-# class ChessGame < ActiveRecord::Base
-# 
-#   include SpaceCadetUuid
-# 
-#   before_create do |record|
-#     record.prepare_create SpaceCadet::Uuid, record, 31
-#   end
-# 
-#   before_destroy do |record|
-#     SpaceCadet::Uuid.delete(record.id)
-#   end
-# 
-# end # ChessGame
-
-class SpaceCadetWrapper
-
-  include SpaceCadetUuid
-
-  def before_create record
-    prepare_create SpaceCadet::Uuid, record, 31
-  end
-
-  def before_destroy record
-    SpaceCadet::Uuid.delete record.id
-  end
-
-end # SpaceCadetWrapper
 
 class ChessGame < ActiveRecord::Base
 
