@@ -44,20 +44,24 @@ end # ChessGameCore
 # 
 # end # ChessGame
 
-class ChessGame < ActiveRecord::Base
+class SpaceCadetCallback
 
   include SpaceCadetUuid
 
-  before_create :prepare_uuid
-  before_destroy :uuid_clean
-
-  def prepare_uuid
-    prepare_create SpaceCadet::Uuid, self, 31
+  def before_create record
+    prepare_create SpaceCadet::Uuid, record, 31
   end
 
-  def uuid_clean
-    SpaceCadet::Uuid.delete id
+  def before_destroy record
+    SpaceCadet::Uuid.delete record.id
   end
+
+end # SpaceCadetCallback
+
+class ChessGame < ActiveRecord::Base
+
+  before_create SpaceCadetCallback.new
+  before_destroy SpaceCadetCallback.new
 
 end # ChessGame
 
