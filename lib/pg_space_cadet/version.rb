@@ -1,4 +1,4 @@
-module SpaceCadetUuid
-  VERSION = "0.7.0"
+class SpaceCadetWrapper
+  VERSION = "0.7.1"
 end
 

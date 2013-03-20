@@ -30,11 +30,14 @@ module SpaceCadetActiveRecordUuid
     record
   end
 
-  def prepare_create uuid_class, record, id_bit_count
-    source_name = record.class.table_name
-    record = id_add_uuid uuid_class, source_name, id_bit_count
-    record = id_add_uuid uuid_class, source_name, id_bit_count unless record
-    record = id_add_uuid uuid_class, source_name, id_bit_count unless record
+  ID_RETRY_COUNT = 10
+
+  def prepare_create uuid_class, source_name, id_bit_count
+    record = nil
+    retry_count = 0
+    while !record && retry_count < ID_RETRY_COUNT do
+      record = id_add_uuid uuid_class, source_name, id_bit_count
+    end
     conn = record.class.connection
     set_auto_increment conn, source_name, record.id
   end
