@@ -38,6 +38,10 @@ class ChessGame < ActiveRecord::Base
     record.prepare_create SpaceCadet::Uuid, record, 31
   end
 
+  before_destroy do |record|
+    SpaceCadet::Uuid.delete(record.id)
+  end
+
 end # ChessGame
 
 START_POSITION ||=

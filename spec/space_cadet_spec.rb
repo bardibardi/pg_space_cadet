@@ -24,5 +24,19 @@ describe SpaceCadet::Uuid do
     expect(exception_thrown).to eq(true)
   end
 
+  it "should be deleted when parent is destroyed" do
+    id, chess_game = add_chess_game 'e2e4', ''
+    u = SpaceCadet::Uuid.find(id)
+    expect(id).to eq(u.id)
+    chess_game.class.destroy(id)
+    exception_thrown = nil
+    begin
+      u = SpaceCadet::Uuid.find(id)
+    rescue
+      exception_thrown = true
+    end
+    expect(exception_thrown).to eq(true)
+  end
+
 end
 
