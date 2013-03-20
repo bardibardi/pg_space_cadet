@@ -44,7 +44,7 @@ end # ChessGameCore
 # 
 # end # ChessGame
 
-class SpaceCadetCallback
+class SpaceCadetWrapper
 
   include SpaceCadetUuid
 
@@ -56,12 +56,12 @@ class SpaceCadetCallback
     SpaceCadet::Uuid.delete record.id
   end
 
-end # SpaceCadetCallback
+end # SpaceCadetWrapper
 
 class ChessGame < ActiveRecord::Base
 
-  before_create SpaceCadetCallback.new
-  before_destroy SpaceCadetCallback.new
+  before_create SpaceCadetWrapper.new
+  before_destroy SpaceCadetWrapper.new
 
 end # ChessGame
 
