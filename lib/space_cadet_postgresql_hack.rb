@@ -1,4 +1,4 @@
-require 'securerandom'
+# require 'securerandom'
 require 'active_record'
 
 module SpaceCadetPostgresqlHack
@@ -8,8 +8,10 @@ module SpaceCadetPostgresqlHack
     conn.execute("select setval('#{primary_id_seq}', #{id - 1});")
   end
 
+# create extension "uuid-ossp"
   def new_uuid conn
-    SecureRandom.uuid
+    conn.execute("select uuid_generate_v4() as u")[0]['u']
+    # SecureRandom.uuid
   end
 
 end
