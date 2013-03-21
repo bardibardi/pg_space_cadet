@@ -9,6 +9,8 @@ Gem::Specification.new do |s|
   s.email = ["bardi@hotmail.com"]
   s.homepage = "http://bardibardi.github.com/pg_space_cadet"
 
+  s.add_dependency('pg')
+  s.add_dependency('activerecord', '=> 3.0')
   s.add_development_dependency('rspec', '~> 2.11')
   s.requirements << 'most likely any version of the pg gem that understands setval for sequences and uuid_generate_v4 (after create extension "uuid-ossp")'
   s.requirements << 'most likely any version of the activerecord gem which can use the given pg gem and can be used with require "active_record"'
