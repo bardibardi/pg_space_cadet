@@ -62,7 +62,7 @@ The result is that id 569967860 is guaranteed to be unique for all space cadets 
 
 ## Requirements
 
-Most likey any recent version of 1.9 ruby works.
+Most likely any recent version of 1.9 ruby works.
 
 Most likely any version of the pg gem that understands setval for sequences and uuid\_generate\_v4 (after create extension "uuid-ossp") works.
 
