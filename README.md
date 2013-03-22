@@ -11,6 +11,8 @@ pg\_space\_cadet is a simple hack for postgreSQL and ActiveRecord which provides
 
 ## Usage
 
+Note that the version 0.7.2 gem is tested but experimental -- a proof of concept. (It does not use the postgres native uuid type yet. It has not been established whether or not the dependence on the postgreSQL setval function is practical for a production database.)
+
     require 'space_cadet_wrapper'
 
     class ChessGame < ActiveRecord::Base
