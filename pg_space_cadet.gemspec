@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 
   s.authors = ['Bardi Einarsson']
   s.email = ['bardi@hotmail.com']
-  s.homepage = 'http://bardibardi.github.com/pg_space_cadet'
+  s.homepage = 'https://github.com/bardibardi/pg_space_cadet'
   s.required_ruby_version = '>= 1.9.2'
   s.add_dependency('pg')
   s.add_dependency('activerecord', '>= 3.0')
