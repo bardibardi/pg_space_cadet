@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'pg_space_cadet'
-  s.version = '0.7.2'
-  s.date = '2013-03-21'
+  s.version = '0.7.3'
+  s.date = '2013-03-22'
   s.summary = "for space cadet augmented ActiveRecord::Base's, ruby ObjectSpace like object_id's as default ActiveRecord id's based on UUID's"
   s.description = "pg_space_cadet is a simple hack for postgreSQL and ActiveRecord which provides a uuids table of distributable identities of space cadets -- ActiveRecord::Base instances which use the SpaceCadetWrapper. Each space cadet has a default ActiveRecord id unique in the set of all local space cadets; a space cadet's id is derived from its uuid - UUID's are by design universally distributable."
 
