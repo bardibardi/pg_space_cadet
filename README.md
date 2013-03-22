@@ -36,10 +36,13 @@ ChessGame instances are space cadets.
 Before ActiveRecord creates a ChessGame space cadet, it uses postgreSQL's uuid\_generate\_v4 to create a UUID. The lowest 31 bits of the UUID are used to make a shared ActiveRecord default id.
 
 The uuids table gains a chess\_games row as in:
+
     id           source_name        uuid
     746042992    my_space_cadets    7770a54c-7f08-4817-877e-43e1ac77b670
     569967860    chess_games        274ead56-7c8f-4c8d-ad21-35d4a1f904f4
+
 The chess\_games table gains a row like:
+
     id           moves    ambiguities    move_number    ...
     569967860    e2e4                    1              ...
 
@@ -81,6 +84,7 @@ The specs assume that the chess\_games table exists in the postgreSQL database.
 The specs do not update the database (transactions with rollback).
 
 Note, to prepare the database for testing:
+
     irb prompt> load 'spec/support/space_cadet.rb'
     irb prompt> up
     irb prompt> exit
@@ -88,6 +92,7 @@ Note, to prepare the database for testing:
 The author uses DbVisualizer 9.0.5 and irb to try out the space cadets.
 
 Note, to find the gem installation directory:
+
     irb prompt> require 'space_cadet_wrapper'
     irb prompt> $".grep(/pg_space_cadet/)[0]
     irb prompt> exit
